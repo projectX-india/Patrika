@@ -1,0 +1,13 @@
+@import url(colorMaster.css);
+@import url(fontMaster.css);
+
+.index {
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+.card-container {
+    padding-bottom: 2500px;
+    margin-top: 80px;
+}

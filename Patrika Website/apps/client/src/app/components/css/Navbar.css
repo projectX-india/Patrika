@@ -1,0 +1,139 @@
+@import url(colorMaster.css);
+@import url(fontMaster.css);
+
+.navbar {
+    background-color: var(--navbar-background-color);
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    transition: top 0.3s ease-in;
+    z-index: 100;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar-logo {
+    margin-left: 40px;
+    font-family: BreeSerif-Regular;
+    font-size: 30px;
+    font-weight: 550;
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.navbar-shadow {
+    -webkit-box-shadow: -1px -16px 34px 9px rgba(0,0,0,0.09);
+    -moz-box-shadow: -1px -16px 34px 9px rgba(0,0,0,0.09);
+    box-shadow: -1px -16px 34px 9px rgba(0,0,0,0.09);
+}
+
+.navbar-connect-container{
+    width: fit-content;
+    height: 45px;
+    margin-left: auto;
+    margin-right: 30px;
+    display: block;
+    padding: 2px;
+    background-image: var(--connect-button-gradient);
+    border-radius: 40px;
+    box-sizing: border-box;
+    z-index: 2;
+    cursor: pointer;
+    font-family: OpenSans-Medium;
+    font-size: 15px;
+}
+
+.navbar-connect-container span {
+	background: var(--navbar-background-color);
+	border-radius: 40px;
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+	justify-content: center;
+	height: 100%;
+    width: 100%;
+    margin-right: 40px;
+	transition: background .5s ease;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 40px;
+    font-family: OpenSans-Medium;
+    font-size: 16px;
+}
+
+.navbar-menu-option {
+    height: 30px;
+    width: fit-content;
+    margin: 7px 7px;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--menu-option-light);
+}
+
+.option-active{
+    border: 1px solid;
+    border-color: var(--menu-option-dark);
+    color: var(--menu-option-dark);
+    font-weight: 500;
+}
+
+.navbar-search {
+    height: 45px;
+    min-width: 45px;
+    width: fit-content;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    background-color: var(--search-background);
+}
+.navbar-search > .MuiSvgIcon-root {
+    background-color: var(--search-background);
+    font-size: 27px;
+    margin-left: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.navbar-search input {
+    background:transparent;
+    border: 0;
+    font-size: 20px;
+    outline: none;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.navbar-search-hidden {
+    width: 0px;
+}
+
+.navbar-search-expanded {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.navbar-right-container{
+    height: auto;
+    width: fit-content;
+    display: flex;
+    margin-left: auto;
+    flex-direction: row;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Belgrano-Regular;
+    src: url(../../../assets/fonts/Belgrano-Regular.ttf);
+}
+
+@font-face {
+    font-family: BreeSerif-Regular;
+    src: url(../../../assets/fonts/BreeSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: Dongle-Bold;
+    src: url(../../../assets/fonts/Dongle-Bold.ttf);
+}
+
+@font-face {
+    font-family: Dongle-Regular;
+    src: url(../../../assets/fonts/Dongle-Regular.ttf);
+}
+
+@font-face {
+    font-family: Dongle-Light;
+    src: url(../../../assets/fonts/Dongle-Light.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Medium;
+    src: url(../../../assets/fonts/OpenSans-Medium.ttf);
+}
