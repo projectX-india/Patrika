@@ -14,9 +14,14 @@
     align-items: center;
 }
 
+.navbar a {
+    text-decoration: none;
+}
+
 .navbar-logo {
+    color: var(--logo-color);
     transition: top 0.6s ease-in;
-    margin-left: 40px;
+    margin-left: 3vw;
     font-family: BreeSerif-Regular;
     font-size: 30px;
     font-weight: 550;
@@ -37,7 +42,7 @@
     width: fit-content;
     height: 45px;
     margin-left: auto;
-    margin-right: 30px;
+    margin-right: 3vw;
     display: block;
     padding: 2px;
     background-image: var(--connect-button-gradient);
@@ -71,6 +76,10 @@
     font-size: 16px;
 }
 
+.navbar-menu a {
+    text-decoration: none;
+}
+
 .navbar-menu-option {
     height: 30px;
     width: fit-content;
@@ -92,6 +101,25 @@
     font-weight: 500;
 }
 
+.addpost {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--search-background);
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.addpost > .MuiSvgIcon-root {
+    background: transparent;
+    font-size: 27px;
+    cursor: pointer;
+}
+
 .navbar-search {
     height: 45px;
     min-width: 45px;
@@ -101,11 +129,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-right: 30px;
+    margin-right: 10px;
     background-color: var(--search-background);
+    transition: all 0.4s ease-in-out;
 }
 .navbar-search > .MuiSvgIcon-root {
-    background-color: var(--search-background);
+    background: transparent;
     font-size: 27px;
     margin-left: 10px;
     margin-right: 5px;
@@ -115,7 +144,7 @@
 .navbar-search input {
     background:transparent;
     border: 0;
-    font-size: 20px;
+    font-size: 17px;
     outline: none;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
@@ -126,7 +155,8 @@
 }
 
 .navbar-search-expanded {
-    width: 300px;
+    width: 20vw;
+    max-width: 80%;
     margin-right: 10px;
 }
 

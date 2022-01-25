@@ -4,5 +4,7 @@
     --connect-button-gradient: linear-gradient(90deg, #0cccc0 6%, #fc00ff 100%);
     --menu-option-light: #4d4a4a;
     --menu-option-dark: #000000;
-    --search-background: #ffffff;
+    --search-background: #fffefe;
+    --card-background: #ffffff;
+    --logo-color: #000000;
 }

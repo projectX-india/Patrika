@@ -1,12 +1,17 @@
-import React,{useEffect} from 'react';
+// Library Imports
+import {useEffect} from 'react';
 
+// Dependencies imports
 import './css/Sortbar.css'
 
+// Components Import
 
+// Assets Import
 import SortIcon from '@mui/icons-material/Sort';
 
 function Sortbar() {
 
+	// Sets the position of sortbar according to the navbar
     var lastScroll = window.pageYOffset;
 	const controlNavbar = () => {
 		var currentScrollPos = window.pageYOffset;

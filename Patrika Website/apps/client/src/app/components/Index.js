@@ -1,5 +1,5 @@
 // Library Imports
-import React,{useState,useEffect} from 'react';
+import {useState,useEffect} from 'react';
 import {BrowserRouter as Router,Route, Routes} from 'react-router-dom';
 import Web3 from 'web3';
 
@@ -8,6 +8,7 @@ import './css/Index.css'
 
 // Components Import
 import Navbar from './Navbar';
+import NewsCards from './NewsCards';
 import Sortbar from './Sortbar';
 
 //Assets Import
@@ -42,30 +43,36 @@ function Index() {
 	},[])
 
   	return(
-	<Router>  
-		<div className='index'>
-    		<Navbar
-				user={user}
-			/> 
-			<Routes>
-				<Route path='/' element = {
-					<>
-						<div className='card-container'>
-							INDEX PAGE
-						</div>
-					</>
-				}/>
-				<Route path='/news' element = {
-					<>	
-						<Sortbar/>
-						<div className='card-container'>
-							NEWS 
-						</div>
-					</>
-				}/>
-			</Routes>
-  		</div>
-	</Router>
+		<Router>  
+			<div className='index'>
+    			<Navbar
+					user={user}
+				/> 
+				<Routes>
+					<Route path='/' element = {
+						<>
+							<div className='card-container'>
+								INDEX PAGE
+							</div>
+						</>
+					}/>
+					<Route path='/news' element = {
+						<>	
+							<Sortbar/>
+							<NewsCards/>
+						</>
+					}/>
+					<Route path='/creator' element = {
+						<>	
+							<Sortbar/>
+							<div className='card-container'>
+								CREATOR
+							</div>
+						</>
+					}/>
+				</Routes>
+  			</div>
+		</Router>
 	);
 }
 
