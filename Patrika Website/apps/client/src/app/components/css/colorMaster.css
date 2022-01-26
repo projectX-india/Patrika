@@ -7,4 +7,5 @@
     --search-background: #fffefe;
     --card-background: #ffffff;
     --logo-color: #000000;
+    --loading-gradient: linear-gradient(to right, #d9d9d9 0%, rgba(0,0,0,0.05) 20%, #d9d9d9 40%, #d9d9d9 100%);
 }

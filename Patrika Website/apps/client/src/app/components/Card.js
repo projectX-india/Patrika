@@ -15,6 +15,7 @@ function Card(){
     return(
         <div className='Card'>
             <div className='card-image'>
+                <img src="http://placekitten.com/500/300" alt="" />
             </div>
             <div className='news-headline'>
                 Another Senior Congress Exit: RPN Singh Joins BJP Ahead Of UP Election
@@ -43,7 +44,7 @@ function Card(){
                         />
                     </div>
                     <div className="owner-username-container">
-                        <span className='owner-heading'>Owner</span>
+                        <span className='owner-heading'>Reporter</span>
                         <span className='owner-username'>@parvg555</span>
                     </div>
                 </div>
