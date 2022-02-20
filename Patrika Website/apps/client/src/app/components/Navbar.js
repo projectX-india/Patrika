@@ -12,7 +12,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 
 function Navbar({
-	user
+	user,
+	account,
+	ConnectMetamask
 }) {
 
 	// Extracts the URL of the page for menu highlights
@@ -79,8 +81,13 @@ function Navbar({
 			<div className="addpost">
 				<PostAddIcon/>
 			</div>
-			<div className='navbar-connect-container'>
-				<span>{user?(`${user.username}`):('Connect Wallet')}</span>
+			<div 
+				className='navbar-connect-container'
+				onClick={async () => {
+					await ConnectMetamask();
+				}}
+			>
+				<span>{account?(`${account}`):('Connect Wallet')}</span>
 			</div>
 		</div>
 		
