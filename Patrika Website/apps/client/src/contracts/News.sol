@@ -8,7 +8,6 @@ contract News {
     struct Post {
 
         uint id;
-
         // news content
         string ContentHash; // hash of ipfs text
         string SummaryHash; // hash of ipfs summary text
