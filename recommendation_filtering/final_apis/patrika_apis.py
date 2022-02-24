@@ -15,7 +15,7 @@ def index():
 
 # cussword filter API
 @app.get("/cussword-filter/{article: str}")
-def filter_article(article : str):
+def filter_article(article : str =  Path(None)):
     final_str = replace_with_strike(article)
     return {
             "status":"pass",
