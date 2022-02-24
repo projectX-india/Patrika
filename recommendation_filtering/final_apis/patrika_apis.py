@@ -14,8 +14,8 @@ def index():
     return FileResponse("landing_page/index.html")
 
 # cussword filter API
-@app.get("/cussword-filter/{article: str}")
-def filter_article(article : str =  Path(None)):
+@app.get("/cussword-filter/{article}")
+def filter_article(article : str):
     final_str = replace_with_strike(article)
     return {
             "status":"pass",
