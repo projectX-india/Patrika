@@ -68,7 +68,7 @@
 
 .CardProfile-thumb-container {
     display: flex;
-    background: transparent;
+    background: var(--card-background);
     width: 100%;
 }
 
