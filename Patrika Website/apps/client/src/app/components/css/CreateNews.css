@@ -1,5 +1,62 @@
+@import url(colorMaster.css);
+@import url(fontMaster.css);
+
 .CreateNews {
+    width: 100vw;
     margin-top:90px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    align-items: center;
 }
+
+.Create-options > .MuiSvgIcon-root {
+    background: transparent;
+    font-size: 60px;
+}
+
+.text-input {
+    width: 50%;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.Create-options {
+    width: 50%;
+}
+
+.Create-options > .MuiSvgIcon-root {
+   float: right;
+   cursor: pointer;
+}
+
+.image-holder {
+    width: 50%;
+    height: 150px;
+    background: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-input {
+    background: transparent;
+}
+
+.submit-section {
+    margin: 10px;
+}
+
+.submit-section > button {
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.4s all;
+}
+
+.submit-section > button:hover {
+    background: #000;
+    color: var(--background-color);
+}   
