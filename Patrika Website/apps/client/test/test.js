@@ -38,7 +38,7 @@ contract('News',([deployer,author,liker]) => {
             postCount = await news.PostCount()
         })
         
-        it('Post Creation', async ()=> {
+        it('Post can be created', async ()=> {
             assert.equal(postCount,1)
 
             // Getting data from event as event is created
@@ -59,7 +59,7 @@ contract('News',([deployer,author,liker]) => {
 
         })
 
-        it('Post is listed', async () => {
+        it('Post can be listed', async () => {
             const post = await news.Posts(postCount)
           
             assert.equal(post.id.toNumber(),postCount.toNumber(),"Post Id Correct")
@@ -88,7 +88,7 @@ contract('News',([deployer,author,liker]) => {
 
         })
 
-        it('Post can be Donated', async () => {
+        it('Post can be Tipped', async () => {
             // Tracking author's balance before post is liked
             let oldAuthorBalance
             oldAuthorBalance = await web3.eth.getBalance(author)
