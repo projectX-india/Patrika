@@ -112,12 +112,20 @@
     margin-right: 10px;
     cursor: pointer;
     border-radius: 100%;
+    text-decoration: none;
 }
 
-.addpost > .MuiSvgIcon-root {
+.addpost a{
+    background: transparent;
+    text-decoration: none;
+    color: #000;
+}
+
+.addpost > a > .MuiSvgIcon-root {
     background: transparent;
     font-size: 27px;
     cursor: pointer;
+    color: #000;
 }
 
 .navbar-search {

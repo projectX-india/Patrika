@@ -12,6 +12,8 @@ import Navbar from './Navbar';
 import NewsCards from './NewsCards';
 import Sortbar from './Sortbar';
 import ProfileCards from './ProfileCards';
+import ReadNews from './ReadNews';
+import CreateNews from './CreateNews';
 
 //Assets Import
 
@@ -88,6 +90,18 @@ function Index() {
 						<>	
 							<Sortbar/>
 							<ProfileCards/>
+						</>
+					}/>
+
+					<Route path='/readnews/:id' element = {
+						<>
+							<ReadNews/>
+						</>
+					}/>
+
+					<Route path='/createnews' element = {
+						<>
+							<CreateNews/>
 						</>
 					}/>
 				</Routes>

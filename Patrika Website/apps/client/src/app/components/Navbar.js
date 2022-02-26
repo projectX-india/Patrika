@@ -79,7 +79,12 @@ function Navbar({
 					/>
 			</div>
 			<div className="addpost">
-				<PostAddIcon/>
+				<Link
+					to='/createnews'
+					onClick={() => setUrl('/createnews')}
+				>
+					<PostAddIcon/>
+				</Link>
 			</div>
 			<div 
 				className='navbar-connect-container'
