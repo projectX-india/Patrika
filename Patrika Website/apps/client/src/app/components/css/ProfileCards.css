@@ -1,0 +1,13 @@
+@import url(colorMaster.css);
+@import url(fontMaster.css);
+
+.ProfileCards {
+    margin: 115px 3vw;
+    padding-bottom: 2500px;
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 1.5rem;
+    padding: 0;
+    list-style-type: none;
+}

@@ -9,7 +9,6 @@
     height: 50vh;  
     min-height: 300px;
     max-height: 450px;
-    border-radius: calc(var(--curve) * 1px);
     overflow: hidden;
     text-decoration: none;
     background: var(--card-background);

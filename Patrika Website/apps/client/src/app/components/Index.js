@@ -11,6 +11,7 @@ import './css/Index.css'
 import Navbar from './Navbar';
 import NewsCards from './NewsCards';
 import Sortbar from './Sortbar';
+import ProfileCards from './ProfileCards';
 
 //Assets Import
 
@@ -86,9 +87,7 @@ function Index() {
 					<Route path='/creator' element = {
 						<>	
 							<Sortbar/>
-							<div className='card-container'>
-								CREATOR
-							</div>
+							<ProfileCards/>
 						</>
 					}/>
 				</Routes>
