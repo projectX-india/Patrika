@@ -1,3 +1,133 @@
+@import url(colorMaster.css);
+@import url(fontMaster.css);
+
 .ReadNews {
+    position: relative;
     margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    background: transparent;
+}
+
+.news-article {
+    width: 65%;
+    height: auto;
+}
+
+.profile-container {
+    min-height: 50vh;
+    position: fixed;
+    margin: 2% 5%;
+    right: 0;
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--search-background);
+}
+
+.newspaper {
+    margin: 2% 5%;
+    padding: 5%;
+    border-radius: 10px;
+    background: var(--search-background);
+}
+
+.newspaper > p {
+    font-size: 25px;
+    margin: 10px 0px;
+    background: transparent;
+}
+
+.newspaper-headline {
+    display: flex;
+    font-size: 45px;
+    font-weight: 550;
+    background: transparent;
+}
+
+.newspaper-image-container {
+    margin: 10px 0px;
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.newspaper-image-container > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+
+.profile-section {
+    margin: 10% 10%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+}
+
+.profile-details {
+    display:flex;
+    flex-direction: column;
+    margin-left: 10px;
+    
+    background: transparent;
+}
+
+.profile-details > p {
+    background: transparent;
+    margin-top: 7px;
+}
+
+.profile-details > span {
+    font-size: 25px;
+    font-weight: 550;
+    background: transparent;
+}
+
+
+.donation-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.donation-form > input {
+    margin: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 30px ;
+    border-bottom: 2px solid #000;
+}
+
+.support-message {
+    background: transparent;
+    margin-bottom: 20px;
+}
+
+.donation-form > button {
+    margin: 10px;
+    height: 40px;
+    width: 60%;
+    font-size: 20px;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.donation-form > button:hover {
+    background: #000;
+    color: #fff;
 }
