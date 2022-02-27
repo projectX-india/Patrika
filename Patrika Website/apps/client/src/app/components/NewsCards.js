@@ -9,22 +9,11 @@ import Card from './Card';
 
 /* Asset imports */
 
-function NewsCards(){
+function NewsCards({posts,postCount}){
 
     return(
         <div className='NewsCards'>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            {posts.map((post)=>  <Card key={post.id} post={post}/>)}
         </div>
     );
 }

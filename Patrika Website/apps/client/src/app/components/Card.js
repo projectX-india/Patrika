@@ -9,8 +9,62 @@ import './css/Card.css';
 /* Asset imports */
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Avatar } from '@mui/material';
+import axios from './axios.js';
 
-function Card(){
+function Card({post}){
+
+    const [headline,setHeadline] = useState('');
+    const [contentHash,setContentHash] = useState([]);
+    const [content,setContent] = useState('');
+
+    useEffect(async () => {
+        const datalao =  async () => {
+            var res = await axios.get(`${post.SummaryHash}`);
+            setHeadline(res.data);
+        }
+        datalao();
+    }, [])
+
+
+    const hashToText =  async (hash) => {
+        var res = await axios.get(`${hash}`);
+        return res.data;
+    }
+
+    useEffect(async () => {
+        extractContentHash();
+        console.log(contentHash);
+        
+        contentHash.map(item=>{
+            var temp = hashToText(item.hash);
+            setContent(...content,{
+                "isPara":item.isPara,
+                "content":temp
+            })
+        })
+        console.log(content);
+        // const contentDaaldo =  async () => {
+        //     var res = await axios.get(`${post.ContentHash}`);
+        //     setContent(res.data);
+        //     console.log(res.data);
+        // }
+        // contentDaaldo();
+    }, [])
+
+
+    const extractContentHash = ()=>{
+        let data=post.ContentHash;
+        // console.log(data)
+        const myArray = data.split('>>');
+        // console.log(myArray.length)
+        for(let i=0;i<myArray.length-1;i++){
+            let extra  = myArray[i].split(':')[0];
+            let isPara = extra[extra.length-1]=='h';
+            let hashh = myArray[i].split(':')[1];
+            setContentHash((contentHash)=>[...contentHash,{"isPara":isPara,"hash":hashh}])
+            // console.log(myArray[i].split(':')[1]);
+        }
+    }
 
     return(
         <div className='Card'>
@@ -18,10 +72,10 @@ function Card(){
                 <img src="http://placekitten.com/500/300" alt="" />
             </div>
             <div className='news-headline'>
-                Another Senior Congress Exit: RPN Singh Joins BJP Ahead Of UP Election
+                {headline}
             </div>
             <div className='news-description'>
-                UP Election 2022: RPN Singh is the second big exit for the Congress in UP after Jitin Prasada, who is now a minister in the Yogi Adityanath-led BJP government in the state.
+                {}
             </div>
             <div className='news-details'>
                 <div className='news-likes-container'>

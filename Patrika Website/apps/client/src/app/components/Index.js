@@ -15,11 +15,17 @@ import ProfileCards from './ProfileCards';
 import ReadNews from './ReadNews';
 import CreateNews from './CreateNews';
 
+// Smart Contract Import
+import News from '../../abis/News.json'
+
 //Assets Import
 
 function Index() {
 	const [user,setUser] = useState();
 	const [account,setAccount] = useState()
+	const [newsContract, setNewsContract] = useState(null)
+	const [posts,setPosts] = useState([])
+	const [postCount, setPostCount] = useState(undefined)
 
 	//Function to set if navbar is visible or not
 	var lastScroll = window.pageYOffset;
@@ -47,12 +53,41 @@ function Index() {
 		
 	},[])
 
+
+	const fetchContract =  async (web3) => {
+		const networkId = await web3.eth.net.getId()
+		const networkData = News.networks[networkId]
+		if(networkData){
+			const news = new web3.eth.Contract(News.abi,networkData.address);
+			setNewsContract(news);
+			const postCount = await news.methods.PostCount().call({
+				from:networkData.address
+			}).then((postCount) => {
+				setPostCount(postCount);
+				return postCount;
+			})
+
+			for(var i=1;i<=postCount;i++){
+				await news.methods.Posts(i).call({
+					from:networkData.address
+				}).then((post) => {
+					setPosts((posts) => [...posts,post]);
+				})
+			}
+			
+		}else{
+			alert("Dapp not deployed to detected network");
+		}
+	}
+
 	// Connect the metamask walet to the website
 	const ConnectMetamask = async () => {
 		if(window.ethereum){
 			const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
 			const accounts = await web3.eth.requestAccounts();
 			setAccount(accounts[0]);
+			await fetchContract(web3);
+			
 		}else{
 			alert("PLEASE INSTALL METAMASK!");
 		}
@@ -61,6 +96,8 @@ function Index() {
 	// Checking if wallet is already connected
 	useEffect(async () =>{ 
 		await ConnectMetamask();
+		console.log(posts);
+		console.log(postCount);
 	},[])
 
 
@@ -83,7 +120,10 @@ function Index() {
 					<Route path='/news' element = {
 						<>	
 							<Sortbar/>
-							<NewsCards/>
+							<NewsCards
+							posts={posts}
+							postCount={postCount}
+							/>
 						</>
 					}/>
 					<Route path='/creator' element = {
@@ -95,13 +135,16 @@ function Index() {
 
 					<Route path='/readnews/:id' element = {
 						<>
-							<ReadNews/>
+							<ReadNews />
 						</>
 					}/>
 
 					<Route path='/createnews' element = {
 						<>
-							<CreateNews/>
+							<CreateNews 
+							newsContract={newsContract}
+							account={account}
+							/>
 						</>
 					}/>
 				</Routes>
