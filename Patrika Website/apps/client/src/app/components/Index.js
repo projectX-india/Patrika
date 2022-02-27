@@ -135,7 +135,9 @@ function Index() {
 
 					<Route path='/readnews/:id' element = {
 						<>
-							<ReadNews />
+							<ReadNews
+								posts={posts}
+							/>
 						</>
 					}/>
 

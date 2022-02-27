@@ -1,5 +1,6 @@
 /* Library import */
 import {useState,useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 /* Dependency import */
 import './css/Card.css';
@@ -33,22 +34,28 @@ function Card({post}){
 
     useEffect(async () => {
         extractContentHash();
-        console.log(contentHash);
-        
-        contentHash.map(item=>{
-            var temp = hashToText(item.hash);
-            setContent(...content,{
-                "isPara":item.isPara,
-                "content":temp
-            })
-        })
-        console.log(content);
-        // const contentDaaldo =  async () => {
-        //     var res = await axios.get(`${post.ContentHash}`);
-        //     setContent(res.data);
-        //     console.log(res.data);
-        // }
-        // contentDaaldo();
+        const contentDaalo = async () => {
+            for(let i=0;i<contentHash.length;i++){
+                let item  = contentHash[i];
+                if(item.isPara){
+                    var temp = await hashToText(item.hash);
+                    setContent((content)=>[
+                        ...content,{
+                            "isPara":item.isPara,
+                            "content":temp
+                        }
+                    ])
+                }else{
+                    setContent((content)=>[
+                        ...content,{
+                            "isPara":item.isPara,
+                            "content":`https://ipfs.infura.io/ipfs/${item.hash}`
+                        }
+                    ])
+                }   
+            }
+        }
+        contentDaalo();
     }, [])
 
 
@@ -66,10 +73,26 @@ function Card({post}){
         }
     }
 
+    const phliContentImage = () => {
+        for(let i=0;i<content.length;i++){
+            let item = content[i];
+            if(!item.isPara){
+                return item.content;
+            }
+        }
+    }
+
+
     return(
-        <div className='Card'>
+        <div 
+            className='Card'
+            onClick={event =>  window.location.href=`/readnews/${post.id}`}
+        >
+            {/* <Link to={`/readnews/${post.id}`}> */}
             <div className='card-image'>
-                <img src="http://placekitten.com/500/300" alt="" />
+                <img src={
+                    (phliContentImage())?phliContentImage():'http://placekitten.com/500/300'
+                } alt="" />
             </div>
             <div className='news-headline'>
                 {headline}
@@ -83,13 +106,13 @@ function Card({post}){
                         <FavoriteBorderIcon/>
                     </span>
                     <span className='news-likes'>
-                        19 (15 USD)
+                        {post[3]} ({post[5]} USD)
                     </span>
                 </div>
                 <div className='news-owner-container'>
                     <div className="news-avatar">
                         <Avatar 
-                            alt="Parv Gupta" 
+                            alt={post[6].slice(0,5)} 
                             src="/static/images/avatar/1.jpg" 
                             sx={{
                                 width:32,
@@ -99,10 +122,11 @@ function Card({post}){
                     </div>
                     <div className="owner-username-container">
                         <span className='owner-heading'>Reporter</span>
-                        <span className='owner-username'>@parvg555</span>
+                        <span className='owner-username'>@{post[6].slice(0,5)}</span>
                     </div>
                 </div>
             </div>
+            {/* </Link> */}
         </div>
     );
 }

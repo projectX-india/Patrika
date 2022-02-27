@@ -131,3 +131,55 @@
     background: #000;
     color: #fff;
 }
+
+
+.NSFW-notice-container {
+    z-index: 101;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NSFW-notice {
+    height: 200px;
+    width: 500px;
+    margin: 10px;
+    background: white;
+    font-size: 30px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.NSFW-notice > button {
+    margin: 10px;
+    height: 30px;
+    width: 200px;
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.NSFW-notice > a {
+    background: transparent;
+}
+
+.NSFW-notice > a > button {
+    margin: 10px;
+    height: 30px;
+    width: 200px;
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+}

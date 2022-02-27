@@ -1,5 +1,8 @@
 /* Library import */
 import {useState,useEffect} from 'react';
+import { useHistory, useParams } from 'react-router-dom'
+import Web3 from 'web3';
+import { Link } from 'react-router-dom';
 
 /* Dependency import */
 import './css/ReadNews.css';
@@ -7,12 +10,79 @@ import './css/ReadNews.css';
 /* Component import */
 import { Avatar } from '@mui/material';
 
+/* Smart Contract import */
+import News from '../../abis/News.json'
+
 /* Asset imports */
 
 function ReadNews(){
 
+    const [posts,setPosts] = useState()
+    const [postCount, setPostCount] = useState(undefined)
+    const { id } = useParams()
+    const [age,setage] = useState(true);
+
+    const fetchContract =  async (web3) => {
+		const networkId = await web3.eth.net.getId()
+		const networkData = News.networks[networkId]
+		if(networkData){
+			const news = new web3.eth.Contract(News.abi,networkData.address);
+			const postCount = await news.methods.PostCount().call({
+				from:networkData.address
+			}).then((postCount) => {
+				setPostCount(postCount);
+				return postCount;
+			})
+
+			// for(var i=1;i<=postCount;i++){
+				await news.methods.Posts(id).call({
+					from:networkData.address
+				}).then((post) => {
+					setPosts(post);
+                    console.log(post)
+				})
+			
+			
+		}else{
+			alert("Dapp not deployed to detected network");
+		}
+    }
+
+    const ConnectMetamask = async () => {
+		if(window.ethereum){
+			const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
+			const accounts = await web3.eth.requestAccounts();
+			await fetchContract(web3);
+			
+		}else{
+			alert("PLEASE INSTALL METAMASK!");
+		}
+	}
+
+    useEffect(async () => {
+        await ConnectMetamask();
+		console.log(posts);
+    }, [])
+    
+
     return(
         <div className='ReadNews'>
+            {   (age)?(
+                <div className='NSFW-notice-container'>
+                    <div className='NSFW-notice'>
+                        NSFW CONTENT ALERT
+                        <br/><br/>
+                        <button
+                            onClick={() => setage(false)}
+                        >
+                            continue
+                        </button>
+                        <Link to='/news'>
+                            <button>go back</button>
+                        </Link>
+                    </div>
+                </div>):''
+            }
 			<div className="news-article">
                 <div className="newspaper">
 

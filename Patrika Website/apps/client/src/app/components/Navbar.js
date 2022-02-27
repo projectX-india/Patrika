@@ -29,8 +29,8 @@ function Navbar({
   	return <div className='navbar' id='navbar'>
     	{/* logo  */}
 		<Link 
-			to='/'
-			onClick={() => setUrl('/')}
+			to='/news'
+			onClick={() => setUrl('/news')}
 		>
 			<div className='navbar-logo'>
 				PATRIKA
@@ -50,8 +50,8 @@ function Navbar({
 				</div>
 			</Link>
 			<Link
-				to='/creator'
-				onClick={() => setUrl('/creator')}
+				to='/news'
+				onClick={() => setUrl('/news')}
 			>
 				<div 
 					className={`navbar-menu-option ${
