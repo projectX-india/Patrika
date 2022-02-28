@@ -61,15 +61,12 @@ function Card({post}){
 
     const extractContentHash = ()=>{
         let data=post.ContentHash;
-        // console.log(data)
         const myArray = data.split('>>');
-        // console.log(myArray.length)
         for(let i=0;i<myArray.length-1;i++){
             let extra  = myArray[i].split(':')[0];
             let isPara = extra[extra.length-1]=='h';
             let hashh = myArray[i].split(':')[1];
             setContentHash((contentHash)=>[...contentHash,{"isPara":isPara,"hash":hashh}])
-            // console.log(myArray[i].split(':')[1]);
         }
     }
 
