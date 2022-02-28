@@ -1,4 +1,4 @@
-# 
+#
 
 ## Installing dependencies
 
@@ -28,7 +28,7 @@ Run  `truffle test` to run your test script.
 
 Run `npx nx dev-graph` to see a diagram of dependencies.
 
-## Build 
+## Build
 
 Run `npm nx build [client/server]` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
@@ -37,4 +37,3 @@ Run `npm nx build [client/server]` to build the project. The build artifacts wil
 Edit the client files at `/apps/client`
 
 Edit the server files at `/apps/server`
-
