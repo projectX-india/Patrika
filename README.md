@@ -1,4 +1,13 @@
 # Patrika - Blockchain based News Sharing Website
+(winner of HackTU Hackathon)
+
+**Contributors**
+
+Parv Gupta - 101916073
+Naman Malik - 101916072
+
+
+**Video**
 
 [![Patrika](https://img.youtube.com/vi/UoAkprQmWqk/0.jpg)](https://www.youtube.com/watch?v=UoAkprQmWqk)
 
