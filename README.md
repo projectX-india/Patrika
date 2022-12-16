@@ -1,7 +1,7 @@
 # Patrika - Blockchain based News Sharing Website
 (winner of HackTU Hackathon - [Devfolio Link](https://devfolio.co/projects/patrika-2f4e) )
 
-**Developers---------------**
+**Developers**
 
 ***Parv Gupta - 101916073***
 
