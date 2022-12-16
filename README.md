@@ -25,7 +25,7 @@ Patrika is a news sharing DApp application that runs on a decentralized network 
 
 **Screenshots**
 
-![Frontend](/readmepics/1.png "Frontend"  | width=100 )
+![Frontend](/readmepics/1.png "Frontend")
 
 ![Frontend](/readmepics/2.png "Frontend")
 
