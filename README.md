@@ -1,12 +1,6 @@
 # Patrika - Blockchain based News Sharing Website
 (winner of HackTU Hackathon - [Devfolio Link](https://devfolio.co/projects/patrika-2f4e) )
 
-**Developers**
-
-***Parv Gupta - 101916073***
-
-***Naman Malik - 101916072***
-
 **Description**
 
 Patrika is a news sharing DApp application that runs on a decentralized network (blockchain) and allows users to share and access news in a decentralized way. Patrika has the potential to revolutionize the way we access and share news, by providing a secure, transparent, and decentralized platform for news sharing. The key benefits of Patrika:
